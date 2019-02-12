@@ -89,9 +89,38 @@
 	right: 65;
 }
 
+.activity {
+  font-size: 60px;
+  width: 0%;
+}
+
+.longbutton {
+  height:100px;
+  width:90%;
+  top:50%;
+  left:5%;
+  position: relative;
+  text-align: left;
+
+}
+
+.arrow {
+  text-align: right;
+
+}
+
 </style>
 </head>
 <body>
+
+{{#each events}}
+<div class="event" id="{{id}}">
+  <a href="event" class="activity">
+    <button class="longbutton">{{activity}} &#10095;</button>
+
+  </a>
+</div>
+{{/each}}
 	<button class="backbutton" onclick="location.href='/';" style="font-size : 70px; width: 140; height: 140px"><</button>
 
 </style>

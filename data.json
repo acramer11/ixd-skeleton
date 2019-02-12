@@ -1,0 +1,23 @@
+{
+		"events": [
+
+	{
+		"emotion" : "Happy",
+		"satisfaction" : "10",
+		"activity" : "watching tv",
+		"location" : "home",
+		"date" : "02/12/2918",
+		"time" : "11:11 AM",
+		"notes" : "optional"
+	},
+	{
+		"emotion" : "Sad",
+		"satisfaction" : "1",
+		"activity" : "homework",
+		"location" : "school",
+		"date" : "02/12/2918",
+		"time" : "11:11 AM",
+		"notes" : "yes"
+	}
+	]
+}

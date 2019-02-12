@@ -3,6 +3,8 @@
 	<title>Event Creation Page</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.js"></script>
 </head>
 <body>
 	<div class="jumbotron">
@@ -21,10 +23,14 @@
 	<h1>   <h1>
 </div>
 <div class="container">
-	<h1>Emotion:</h1>
+	<form id="addEventForm" role="form" method="get" action="/add">
+	<label for="emotion">Emotion:</label>
+	 <input type="text" class="form-control" id="activity" placeholder="Emotion" name="activity">
   <div class="styled-select">
-  <select style="height:50px;width:600px;font-size:30px">
-    <option value="Happy"style="font-size: 30px">Happy</option>
+
+  <select style="height:50px;width:600px;font-size:30px" id="emotion" name="emotion">
+   
+    <option value="Happy" id="activity" name="activity">Happy</option>
     <option value="Sad">Sad</option>
     <option value="Content">Content</option>
     <option value="Stressed">Stressed</option>
@@ -33,10 +39,10 @@
   </select>
 
 
-	<h1>Satisfaction Level:</h1>
+	<label for="satisfaction">Satisfaction Level:</label>
   <div class="styled-select">
-  <select style="height:50px;width:600px;font-size:30px">
-    <option value="1">1</option>
+  <select style="height:50px;width:600px;font-size:30px" id="satisfaction" name="satisfaction">
+    <option value="1" id="satisfaction" name="satisfaction">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
@@ -49,10 +55,10 @@
   </select>
 </div>
 
-  <h1>Activity:</h1>
+  <label for="activity">Activity:</label>
   <div class="styled-select">
-  <select style="height:50px;width:600px;font-size:30px">
-    <option value="workout">Workout</option>
+  <select style="height:50px;width:600px;font-size:30px" id="satisfaction" name="satisfaction">
+    <option value="workout"id="satisfaction" name="satisfaction">Workout</option>
     <option value="school">School</option>
     <option value="study">Study</option>
     <option value="surfing">Surfing</option>
@@ -65,7 +71,7 @@
   </select>
 </div>
 
-  <h1>Location:</h1>
+ <label for="location">Location:</label>
   <div class="styled-select">
   <select style="height:50px;width:600px;font-size:30px">
     <option value="home">Home</option>
@@ -79,14 +85,16 @@
   </select>
 </div>
 
-  <h1>Date:</h1> <h3><input type="date" name="date" style="height:50px;width:600px;font-size:30px"></h1>
+  <label for="date">Date:</label> <h3><input type="date" name="date" style="height:50px;width:600px;font-size:30px"></h1>
 
-  <h1>Time:</h1> <h1><input type="time" name="time" style="height:50px;width:600px;font-size:30px"></h1>
+  <label for="time">Time:</label><h1><input type="time" name="time" style="height:50px;width:600px;font-size:30px"></h1>
 
-	<form>
-	  <h1>Notes (optional):</h1><br>
+	
+	 <label for="notes">Notes (optional):</label>
 	  <input type="text" name="firstname" style="height:50px;width:600px;font-size:30px">>
 	  <br>
+	  <input type="submit" id="submitBtn" class="donebutton" value="+" onclick="location.href='/';" style="font-size : 70px; width: 140; height: 140px"></button>
+	  <!--<input type="submit" id="submitBtn" class="donebutton" value="Add the event"></input>-->
 	</form>
 	</div>
 </div>
@@ -162,7 +170,7 @@
 </style>
 </head>
 <body>
-	<button class="donebutton" onclick="location.href='/';" style="font-size : 70px; width: 140; height: 140px">+</button>
+	
 
 
 <button class="cancelbutton" onclick="location.href='/';" style="font-size : 70px; width: 140; height: 140px">x</button>
@@ -170,7 +178,7 @@
 </style>
 
 <div class="icon-bar">
-  	<a class="active"><img src="/images/statistics.png" onclick="location.href='/'"; alt="statistics" class="img" style="width:100px;height:100px;"></a>
+  	<a class="active"><img src="/images/statistics.png" onclick="location.href='/';" alt="statistics" class="img" style="width:100px;height:100px;"></a>
 	<a><img src="/images/activities.png" onclick="location.href='/activities';" alt="activities" class="img" style="width:100px;height:100px;"></a>
 	<a><img src="/images/calendar.png" onclick="location.href='/calendar';" alt="calendar" class="img" style="width:100px;height:100px;"></a>
 	<a><img src="/images/locations.png" onclick="location.href='/locations';" alt="locations" class="img" style="width:100px;height:100px;"></a>
