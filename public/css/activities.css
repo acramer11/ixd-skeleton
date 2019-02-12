@@ -1,0 +1,71 @@
+.option {
+	font-size: 30px;
+}
+
+.styled-select select {
+	position: relative;
+	left: 0;
+}
+
+.center {
+	text-align: center;
+	font-size: 100px;
+}
+.icon-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 20px 20px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.backbutton {
+	border-radius: 100px;
+	position: absolute;
+	top: 325;
+	left: 50;
+}
+
+.cancelbutton {
+	border-radius: 5px;
+	position: absolute;
+	top: 325;
+	right: 50;
+}
+
+.backtext {
+	position: absolute;
+	top: 450;
+	left: 75;
+}
+
+.canceltext {
+	position: absolute;
+	top: 450;
+	right: 65;
+}
+
+.addbutton {
+	border-radius: 100px;
+	position: fixed;
+	bottom: 170;
+	right: 100;
+}s
