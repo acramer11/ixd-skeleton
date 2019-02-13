@@ -24,13 +24,12 @@
 </div>
 <div class="container">
 	<form id="addEventForm" role="form" method="get" action="/add">
-	<label for="emotion">Emotion:</label>
-	 <input type="text" class="form-control" id="activity" placeholder="Emotion" name="activity">
+	<label for="emotion" id="emotion" name="emotion">Emotion:</label>
   <div class="styled-select">
 
   <select style="height:50px;width:600px;font-size:30px" id="emotion" name="emotion">
    
-    <option value="Happy" id="activity" name="activity">Happy</option>
+    <option value="Happy">Happy</option>
     <option value="Sad">Sad</option>
     <option value="Content">Content</option>
     <option value="Stressed">Stressed</option>
@@ -39,10 +38,10 @@
   </select>
 
 
-	<label for="satisfaction">Satisfaction Level:</label>
+	<label for="satisfaction" id="satisfaction" name="satisfactiion">Satisfaction Level:</label>
   <div class="styled-select">
   <select style="height:50px;width:600px;font-size:30px" id="satisfaction" name="satisfaction">
-    <option value="1" id="satisfaction" name="satisfaction">1</option>
+    <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
@@ -55,43 +54,43 @@
   </select>
 </div>
 
-  <label for="activity">Activity:</label>
+  <label for="activity" id="activity" name="activity">Activity:</label>
   <div class="styled-select">
-  <select style="height:50px;width:600px;font-size:30px" id="satisfaction" name="satisfaction">
-    <option value="workout"id="satisfaction" name="satisfaction">Workout</option>
-    <option value="school">School</option>
-    <option value="study">Study</option>
-    <option value="surfing">Surfing</option>
-    <option value="shopping">Shopping</option>
-    <option value="skateboarding">Skateboarding</option>
-    <option value="snowboarding">Snowboarding</option>
-    <option value="coding">Coding</option>
-    <option value="slacklining">Slacklining</option>
-    <option value="partying">Partying</option>
+  <select style="height:50px;width:600px;font-size:30px" id="activity" name="activity">
+    <option value="Workout">Workout</option>
+    <option value="School">School</option>
+    <option value="Studying">Studying</option>
+    <option value="Surfing">Surfing</option>
+    <option value="Shopping">Shopping</option>
+    <option value="Skateboarding">Skateboarding</option>
+    <option value="Snowboarding">Snowboarding</option>
+    <option value="Coding">Coding</option>
+    <option value="Slacklining">Slacklining</option>
+    <option value="Partying">Partying</option>
   </select>
 </div>
 
- <label for="location">Location:</label>
+ <label for="location" id="location" name="location">Location:</label>
   <div class="styled-select">
-  <select style="height:50px;width:600px;font-size:30px">
-    <option value="home">Home</option>
-    <option value="campus">School</option>
-    <option value="library">Library</option>
-    <option value="work">Work</option>
-    <option value="beach">Beach</option>
-    <option value="grocery">Grocery Store</option>
-    <option value="club">Club</option>
-    <option value="friend">Friend's House</option>
+  <select style="height:50px;width:600px;font-size:30px" id="location" name="location">
+    <option value="Home">Home</option>
+    <option value="School">School</option>
+    <option value="Library">Library</option>
+    <option value="Work">Work</option>
+    <option value="Beach">Beach</option>
+    <option value="Grocery Store">Grocery Store</option>
+    <option value="Club">Club</option>
+    <option value="Friend's House">Friend's House</option>
   </select>
 </div>
 
-  <label for="date">Date:</label> <h3><input type="date" name="date" style="height:50px;width:600px;font-size:30px"></h1>
+  <label for="date" id="date" name="date">Date:</label> <h3><input type="date" name="date" style="height:50px;width:600px;font-size:30px"></h1>
 
-  <label for="time">Time:</label><h1><input type="time" name="time" style="height:50px;width:600px;font-size:30px"></h1>
+  <label for="time" id="time" name="time">Time:</label><h1><input type="time" name="time" style="height:50px;width:600px;font-size:30px"></h1>
 
 	
-	 <label for="notes">Notes (optional):</label>
-	  <input type="text" name="firstname" style="height:50px;width:600px;font-size:30px">>
+	 <label for="notes" id="notes" name="notes">Notes (optional):</label>
+	  <input type="text" name="notes" style="height:50px;width:600px;font-size:30px">>
 	  <br>
 	  <input type="submit" id="submitBtn" class="donebutton" value="+" onclick="location.href='/';" style="font-size : 70px; width: 140; height: 140px"></button>
 	  <!--<input type="submit" id="submitBtn" class="donebutton" value="Add the event"></input>-->
