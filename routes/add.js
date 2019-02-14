@@ -2,7 +2,7 @@ var data = require("../data.json");
 
 exports.addEvent = function(request, response) {   
 	// Your code goes here
-	console.log(request.body.addEventForm);
+	console.log(request.query.emotion);
 	var newEvent = {
 		"emotion": request.query.emotion,
 		"satisfaction": request.query.satisfaction,
@@ -12,6 +12,10 @@ exports.addEvent = function(request, response) {
 		"time" : request.query.time,
 		"notes" : request.query.notes
 	};
-	data['events'].push(newEvent);
+	if(request.query.emotion != undefined)
+	{
+		data['events'].push(newEvent);
+	}
+	
 	response.render('add', data);
 };
