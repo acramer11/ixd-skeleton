@@ -8,7 +8,9 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+
 var index = require('./routes/index');
+var home = require('./routes/home');
 var add = require('./routes/add');
 var activities = require('./routes/activities');
 var locations = require('./routes/locations');
@@ -42,7 +44,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-
+app.get('/home', home.view);
 app.get('/add', add.addEvent);
 app.get('/activities', activities.viewActivities);
 app.get('/locations', locations.viewLocations);
