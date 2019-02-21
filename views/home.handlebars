@@ -16,6 +16,7 @@
 
 		</div>
 	</div>
+  <div class="stats"><p>Statistics</p></div>
 	<div class="center"><b> < Today > </b></div>
 
 <img src="/images/bar_graph.png" alt="Bar Graph" class="graph">
@@ -35,42 +36,47 @@
 
 <style>
 
-.center{
-	text-align: center;
-	font-size:70px;
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 50%;
 }
-
+.stats{
+  text-align: center;
+  font-size:100px;
+}
+.center{
+  text-align: center;
+  font-size:70px;
+}
 .today{
-	top:0;
+  top:0;
 }
 .pie {
-	position: relative;
-	left:120;
-	top:300;
+  position: relative;
+  left:120;
+  top:200;
 }
 .pie-info {
-	position: relative;
-	left:40;
-	
+  position: relative;
+  left:40;
+  bottom: 100;
+  
 }
-
-
 .graph{
-	position: relative;
-	left: 150;
-	top: 250;
+  position: relative;
+  left: 150;
+  top: 150;
 }
-
 .styled-select {
-
 }
-
 .styled-select select {
-
-	position: relative;
-	left: 200;
+  position: relative;
+  left: 200;
 }
-
 .icon-bar {
   width: 100%;
   position: fixed;
@@ -78,7 +84,6 @@
   background-color: #555;
   overflow: auto;
 }
-
 .icon-bar a {
   float: left;
   width: 20%;
@@ -88,16 +93,18 @@
   color: white;
   font-size: 36px;
 }
-
 .toggle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
   width: 50%;
   position: fixed;
-  top: 450;
-  left:270;
+  top: 500;
+  left:250;
   background-color: #555;
-  overflow: auto;
-}
-
+  }
 .toggle a {
   float: left;
   width: 33%;
@@ -110,11 +117,9 @@
 .toggle a:hover {
   background-color: #4CAF50;
 }
-
 .icon-bar a:hover {
   background-color: #4CAF50;
 }
-
 .active {
   background-color: #4CAF50;
 }
@@ -161,7 +166,7 @@
 .addbutton {
 	border-radius: 100px;
 	position: fixed;
-	bottom: 170;
+	bottom: 200;
 	right: 100;
 }
 </style>
