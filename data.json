@@ -3,9 +3,9 @@
 
 	{
 		"emotion" : "Happy",
-		"satisfaction" : 10,
-		"activity" : "watching tv",
-		"location" : "home",
+		"satisfaction" : 5,
+		"activity" : "Watching TV",
+		"location" : "Home",
 		"date" : "02/12/2918",
 		"time" : "11:11 AM",
 		"notes" : "optional"
@@ -13,11 +13,49 @@
 	{
 		"emotion" : "Sad",
 		"satisfaction" : 1,
-		"activity" : "homework",
-		"location" : "school",
+		"activity" : "Homework",
+		"location" : "School",
 		"date" : "02/12/2918",
 		"time" : "11:11 AM",
-		"notes" : "yes"
+		"notes" : "Couldn't finish HW on time"
+	},
+	{
+		"emotion" : "Depressed",
+		"satisfaction" : 5,
+		"activity" : "Coding",
+		"location" : "Home",
+		"date" : "02/07/2018",
+		"time" : "11:11 AM",
+		"notes" : ""
+	},
+	{
+		"emotion" : "Stressed",
+		"satisfaction" : 1,
+		"activity" : "Studying",
+		"location" : "School",
+		"date" : "02/12/2018",
+		"time" : "11:11 AM",
+		"notes" : "Geisel sucks"
+	},
+	{
+		"emotion" : "Anxious",
+		"satisfaction" : 2,
+		"activity" : "Partying",
+		"location" : "Friend's House",
+		"date" : "02/20/2018",
+		"time" : "11:11 PM",
+		"notes" : "Can't talk to girls"
+		},
+		{
+		"emotion" : "Content",
+		"satisfaction" : 4,
+		"activity" : "Surfing",
+		"location" : "Beach",
+		"date" : "02/21/2018",
+		"time" : "09:30 AM",
+		"notes" : "Waves were fun!"
 	}
 	]
-}
+	}
+		
+

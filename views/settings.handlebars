@@ -98,10 +98,17 @@
 	right: 65;
 }
 
+.addbutton {
+  border-radius: 100px;
+  position: fixed;
+  bottom: 200;
+  right: 100;
+}
+
 </style>
 </head>
 <body>
-	<button class="backbutton" onclick="location.href='/';" style="font-size : 70px; width: 140; height: 140px"><</button>
+	<button class="backbutton" onclick="location.href='/home';" style="font-size : 70px; width: 140; height: 140px"><</button>
 
 </style>
 
@@ -112,5 +119,7 @@
 	<a><img src="/images/locations.png" onclick="location.href='/locations';" alt="locations" class="img" style="width:100px;height:100px;"></a>
 	<a class="active"><img src="/images/settings.png" onclick="location.href='/settings';" alt="settings" class="img" style="width:100px;height:100px;"></a>
 </div>
+
+<button class="addbutton" onclick="location.href='/add';" style="font-size : 70px; width: 140; height: 140px">+</button>
 
 </html> 
