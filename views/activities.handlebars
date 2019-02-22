@@ -50,7 +50,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #555;
+  background-color: #D6D6D6;
   overflow: auto;
 }
 
@@ -113,6 +113,29 @@
 
 }
 
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
 .arrow {
   text-align: right;
 
@@ -124,17 +147,40 @@
 
 {{#each events}}
 <div class="event">
+ 	<button style="font-size: 40px;"class="accordion">{{activity}}</button>
+	<div style="font-size: 35px;" class="panel">
+ 		 <p>Emotion: {{emotion}}</p>
+ 		 <p>Satisfaction: {{satisfaction}}</p>
+ 		 <p>Date: {{date}}</p>
+ 		 <p>Time: {{time}}</p>
+ 		 <p>Notes: {{notes}}</p>
+		</div>
  
-  <a href="event" class="activity">
-    <button class="longbutton">{{activity}} &#10095;</button>
+<!-- <a href="event" class="activity">
+   <button class="longbutton">{{activity}} &#10095;</button>
 
-  </a>
+  </a> -->
 </div>
 {{/each}}
 	<button class="backbutton" onclick="location.href='/';" style="font-size : 70px; width: 140; height: 140px"><</button>
 
 </style>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
 
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 <div class="icon-bar">
   <a><img src="/images/statistics.png" onclick="location.href='/home'"; alt="statistics" class="img" style="width:100px;height:100px;"></a>
   <a class="active"><img src="/images/activities.png" onclick="location.href='/activities';" alt="activities" class="img" style="width:100px;height:100px;"></a>

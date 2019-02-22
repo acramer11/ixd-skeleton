@@ -3,6 +3,7 @@
   <title>mindful</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
 </head>
 <body>
 <!-- 
@@ -16,25 +17,28 @@
  
     </div>
   </div>
- 
+  <script src="https://code.jquery.com/jquery.js"></script>
+  {{> facebook}}
+  <script src="/js/facebook.js"></script>
   <label for="user" id="user" name="user" class="username" style="font-size: 60px" >Username:</label>
     <input type="text" name="user" class="middleuser" style="height:50px;width:500px;font-size:30px">
     
     <label for="user" id="user" name="user" class="password" style="font-size: 60px">Password:</label>
-    <input type="text" name="user" class="middlepass" style="height:50px;width:500px;font-size:30px">
+    <input type="password" name="user" class="middlepass" style="height:50px;width:500px;font-size:30px">
     <br>
     <input type="submit" id="submitBtn" value="Login" class="login" onclick="location.href='/home';" style="font-size : 60px; width: 200; height: 130px"></button>
     <a href="url" class="create" style="font-size: 60px">Create an account</a>
-<style>
+    
+    <p style="font-size: 60px" class="facebookLogin">Please login through Facebook
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 
-.img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 50%;
-}
+        </fb:login-button>
+      </p>
+      <div id="facebookPhoto" class="profile">
+      <h3>Profile Photo</h3>
+      <img id="photo" class='img-responsive' src="" />
+    </div>
+<style>
 
 .middleuser{
    position: absolute;
