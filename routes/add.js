@@ -5,7 +5,7 @@ exports.addEvent = function(request, response) {
 	console.log(request.query.emotion);
 	var newEvent = {
 		"emotion": request.query.emotion,
-		"satisfaction": request.query.satisfaction,
+		"satisfaction": parseInt(request.query.satisfaction),
 		"activity" : request.query.activity,
 		"location" : request.query.location,
 		"date" : request.query.date,

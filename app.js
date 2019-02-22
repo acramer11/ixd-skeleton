@@ -18,6 +18,9 @@ var settings = require('./routes/settings');
 var calendar = require('./routes/calendar');
 var location_history = require('./routes/location_history');
 
+var data = require('./routes/data');
+
+
 // Example route
 // var user = require('./routes/user');
 
@@ -51,6 +54,7 @@ app.get('/locations', locations.viewLocations);
 app.get('/settings', settings.viewSettings);
 app.get('/calendar', calendar.viewCalendar);
 app.get('/location_history', location_history.viewLocationHistory);
+app.get('/data', data.dataInfo);
 
 // Example route
 // app.get('/users', user.list);

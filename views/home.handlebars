@@ -1,27 +1,158 @@
 <html>
 <head>
-  <title>mindful</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<title>mindful</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
 <!-- 
-  <p style="font-size:30px">This is a paragraph.</p>
-  <p style="font-size:11px">This is another paragraph.</p>
-  -->
+	<p style="font-size:30px">This is a paragraph.</p>
+	<p style="font-size:11px">This is another paragraph.</p>
+	-->
 
-  <div class="jumbotron">
-    <div class="container">
-      <img src="/images/mindful.png" alt="Mindful Logo" class="img">
+	<div class="jumbotron">
+		<div class="container">
+			<img src="/images/mindful.png" alt="Mindful Logo" class="img">
 
-    </div>
-  </div>
-  <div class="stats"><p>Statistics</p></div>
-  <div class="center"><b> < Today > </b></div>
+		</div>
+	</div>
+ <div class="stats"><p>Statistics</p></div>
+<!--	<div class="center"><b> < Today > </b></div> -->
+ <!-- <img src="/images/bar_graph.png" alt="Bar Graph" class="graph">-->
+ 
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+var msg = $.ajax({type: "GET", url: "data", async: false}).responseText;
+ var dataObject=eval("("+msg+")");
+        var result = dataObject.reduce(function(res, obj) {
+    if (!(obj.activity in res))
+        res.__array.push(res[obj.activity] = obj);
+    else {
+        res[obj.activity].satisfaction += obj.satisfaction;
+    }
+    return res;
+}, {__array:[]}).__array
+                .sort(function(a,b) { });
 
-<img src="/images/bar_graph.png" alt="Bar Graph" class="graph">
-<img src="/images/pie_chart.png" alt="Pie chart" class="pie">
-<img src="/images/pie_chart_info.png" alt="Pie chart info" class="pie-info">
+
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+                    var data = new google.visualization.DataTable(result);
+
+  // assumes "word" is a string and "count" is a number
+            data.addColumn('string', 'activity');
+            data.addColumn('number', 'satisfaction');
+            for (var i = 0; i < result.length; i++) {
+                data.addRow([result[i].activity, result[i].satisfaction]);
+            }
+        var options = {
+          width: 800,
+          legend: { position: 'none', fontSize: 30},
+          hAxis : {
+            textStyle:{fontSize:25}
+          },
+          chart: {
+            title: 'Average satisfaction for each activity:', bold: true },
+            titleTextStyle:{fontSize:35},
+            focusTarget: {fontSize: 30},
+
+          axes: {
+            x: {
+              0: { side: 'bottom', label: '', fontSize: 0} 
+            }
+          },
+          vAxis: {
+          title: 'Average Satisfaction',
+          titleTextStyle:{fontSize: 35}
+        },
+
+       
+          bar: { groupWidth: "20%" , fontSize: 30}
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 800px; height: 600px;" class="histogram"></div>
+  </body>
+</html>
+
+ <html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+ var msg = $.ajax({type: "GET", url: "data", async: false}).responseText;
+ var dataObject=eval("("+msg+")");
+
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      var result2 = dataObject.reduce(function(res, obj) {
+    if (!(obj.emotion in res))
+        res.__array.push(res[obj.emotion] = obj);
+    else {
+        res[obj.emotion].satisfaction += obj.satisfaction;
+    }
+    return res;
+}, {__array:[]}).__array
+                .sort(function(a,b) { });
+
+                console.log(result2);
+
+        function loadData(fileName) { 
+        // getting json from a remote file
+        // by returning the jqXHR object we can use the .done() function on it
+        // so the callback gets executed as soon as the request returns successfully
+        return $.getJSON("data");
+    }
+      function drawChart () {
+   
+            var data = new google.visualization.DataTable(result2);
+
+               
+            // assumes "word" is a string and "count" is a number
+            data.addColumn('string', 'emotion');
+            data.addColumn('number', 'satisfaction');
+            for (var i = 0; i < result2.length; i++) {
+                data.addRow([result2[i].emotion, result2[i].satisfaction]);
+            }
+
+            var options = {
+              pieSliceTextStyle:{fontSize:30},
+              chartArea: {width: 5000, height: 500},
+              legend:{textStyle:{fontSize:'30'}},
+              tooltip: {textStyle:  {fontName: 'Verdana',fontSize: 40,bold: false}},
+                
+                title: 'Average satisfaction for each emotion:',
+                titleTextStyle:{fontSize:35},
+                is3D: true
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        
+}
+  
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 800; height: 600;" class="piechart" ></div>
+  </body>
+</html>
+
+
+<!--<img src="/images/pie_chart.png" alt="Pie chart" class="pie">
+<img src="/images/pie_chart_info.png" alt="Pie chart info" class="pie-info">-->
 
 <!--
 <div class="styled-select" >
@@ -35,6 +166,17 @@
 -->
 
 <style>
+.histogram{
+  left:5%;
+  position:relative;
+  top:0%;
+}
+.piechart{
+
+  position : relative;
+  top:2%;
+  left:18%;
+}
 .img {
   display: block;
   margin-left: auto;
@@ -69,6 +211,7 @@
   position: relative;
   left: 150;
   top: 150;
+  z-index: 1000; position: relative;
 }
 .styled-select {
 }
@@ -80,7 +223,7 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: #555;
+  background-color: #D6D6D6;
   overflow: auto;
 }
 .icon-bar a {
@@ -100,7 +243,7 @@
   margin-bottom: 0px;
   width: 50%;
   position: fixed;
-  top: 500;
+  top: 20%;
   left:250;
   background-color: #555;
   }
@@ -126,17 +269,17 @@
 <body>
 
 <div class="icon-bar">
-    <a class="active"><img src="/images/statistics.png" onclick="location.href='/home'"; alt="statistics" class="img" style="width:100px;height:100px;"></a>
-  <a><img src="/images/activities.png" onclick="location.href='/activities';" alt="activities" class="img" style="width:100px;height:100px;"></a>
-  <a><img src="/images/calendar.png" onclick="location.href='/calendar';" alt="calendar" class="img" style="width:100px;height:100px;"></a>
-  <a><img src="/images/locations.png" onclick="location.href='/locations';" alt="locations" class="img" style="width:100px;height:100px;"></a>
-  <a><img src="/images/settings.png" onclick="location.href='/settings';" alt="settings" class="img" style="width:100px;height:100px;"></a>
+  	<a class="active"><img src="/images/statistics.png" onclick="location.href='/home'"; alt="statistics" class="img" style="width:100px;height:100px;"></a>
+	<a><img src="/images/activities.png" onclick="location.href='/activities';" alt="activities" class="img" style="width:100px;height:100px;"></a>
+	<a><img src="/images/calendar.png" onclick="location.href='/calendar';" alt="calendar" class="img" style="width:100px;height:100px;"></a>
+	<a><img src="/images/locations.png" onclick="location.href='/locations';" alt="locations" class="img" style="width:100px;height:100px;"></a>
+	<a><img src="/images/settings.png" onclick="location.href='/settings';" alt="settings" class="img" style="width:100px;height:100px;"></a>
 </div>
 
-<div class="toggle">
-  <a class="active"><text>Day</text></a>
-  <a>Week</a>
-  <a>Month</a>
+<!--<div class="toggle">
+	<a class="active"><text>Day</text></a>
+	<a>Week</a>
+	<a>Month</a>-->
 
 <style>
 .button {
@@ -151,20 +294,22 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
 .button1 {border-radius: 2px;}
 .button2 {border-radius: 4px;}
 .button3 {border-radius: 8px;}
 .button4 {
-  border-radius: 100%;
-  position: fixed;
-  bottom: 200;
-  right: 100;
-  }
+	border-radius: 100%;
+
+	position: fixed;
+	bottom: 200;
+	right: 100;
+	}
 .addbutton {
-  border-radius: 100px;
-  position: fixed;
-  bottom: 200;
-  right: 100;
+	border-radius: 100px;
+	position: fixed;
+	bottom: 200;
+	right: 100;
 }
 </style>
 </head>
