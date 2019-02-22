@@ -3,7 +3,7 @@
 
 	{
 		"emotion" : "Happy",
-		"satisfaction" : "10",
+		"satisfaction" : 10,
 		"activity" : "watching tv",
 		"location" : "home",
 		"date" : "02/12/2918",
@@ -12,7 +12,7 @@
 	},
 	{
 		"emotion" : "Sad",
-		"satisfaction" : "1",
+		"satisfaction" : 1,
 		"activity" : "homework",
 		"location" : "school",
 		"date" : "02/12/2918",
