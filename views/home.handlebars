@@ -107,6 +107,7 @@ var dataObject=eval("("+msg+")");
         res.__array.push(res[obj.location] = obj);
     else {
         res[obj.location].satisfaction += obj.satisfaction;
+        res[obj.location].satisfaction /=2;
     }
     
     return res;
