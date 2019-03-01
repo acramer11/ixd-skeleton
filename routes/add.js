@@ -15,7 +15,11 @@ exports.addEvent = function(request, response) {
 	if(request.query.emotion != undefined)
 	{
 		data['events'].push(newEvent);
+		response.render('home', data);
 	}
-	
+	else
+	{
 	response.render('add', data);
+		
+	}
 };

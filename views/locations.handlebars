@@ -25,7 +25,6 @@
 <style>
 
 .img {
-  display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
@@ -113,6 +112,7 @@
 }
 
 .accordion {
+
   background-color: #eee;
   color: #444;
   cursor: pointer;
@@ -170,13 +170,18 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
+  var item = acc[i];
+  var panel = item.nextElementSibling;
+  panel.style.maxHeight = panel.scrollHeight + "px";
+
+    acc[i].addEventListener("click", function() {
+    this.classList.toggle("inactive");
+    var panel2 = this.nextElementSibling;
+    
+    if (panel2.style.maxHeight){
+      panel2.style.maxHeight = null;
     } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel2.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
 }

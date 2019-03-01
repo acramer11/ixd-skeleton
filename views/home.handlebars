@@ -26,18 +26,21 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 var msg = $.ajax({type: "GET", url: "data", async: false}).responseText;
- var dataObject=eval("("+msg+")");
+var dataObject=eval("("+msg+")");
         var result = dataObject.reduce(function(res, obj) {
     if (!(obj.activity in res))
         res.__array.push(res[obj.activity] = obj);
     else {
         res[obj.activity].satisfaction += obj.satisfaction;
+        res[obj.activity].satisfaction /=2;
     }
+
+   
     return res;
 }, {__array:[]}).__array
                 .sort(function(a,b) { });
 
-
+      console.log(result);
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawStuff);
 
@@ -99,11 +102,13 @@ var msg = $.ajax({type: "GET", url: "data", async: false}).responseText;
       google.charts.setOnLoadCallback(drawChart);
       
       var result2 = dataObject.reduce(function(res, obj) {
-    if (!(obj.emotion in res))
-        res.__array.push(res[obj.emotion] = obj);
+        
+    if (!(obj.location in res))
+        res.__array.push(res[obj.location] = obj);
     else {
-        res[obj.emotion].satisfaction += obj.satisfaction;
+        res[obj.location].satisfaction += obj.satisfaction;
     }
+    
     return res;
 }, {__array:[]}).__array
                 .sort(function(a,b) { });
@@ -122,10 +127,10 @@ var msg = $.ajax({type: "GET", url: "data", async: false}).responseText;
 
                
             // assumes "word" is a string and "count" is a number
-            data.addColumn('string', 'emotion');
+            data.addColumn('string', 'location');
             data.addColumn('number', 'satisfaction');
             for (var i = 0; i < result2.length; i++) {
-                data.addRow([result2[i].emotion, result2[i].satisfaction]);
+                data.addRow([result2[i].location, result2[i].satisfaction]);
             }
 
             var options = {
@@ -134,7 +139,7 @@ var msg = $.ajax({type: "GET", url: "data", async: false}).responseText;
               legend:{textStyle:{fontSize:'30'}},
               tooltip: {textStyle:  {fontName: 'Verdana',fontSize: 40,bold: false}},
                 
-                title: 'Average satisfaction for each emotion:',
+                title: 'Average satisfaction for each location:',
                 titleTextStyle:{fontSize:35},
                 is3D: true
             };

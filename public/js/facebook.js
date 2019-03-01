@@ -24,4 +24,15 @@ function changeUser(response) {
   $("p.facebookLogin").hide();
   $("#name").text(response.name);
   $("#photo").attr("src",response.picture.data.url);
+
+  if(typeof(Storage) !== "undefined") {
+        localStorage.facebookname = response.first_name;
+        localStorage.picurl = response.picture.data.url;
+        localStorage.loggedIn = "loggedIn";
+    }
+    else {
+        console.log("Your browser does not support web storage.");
+    }
+
+    window.location.replace("/home");
 }
