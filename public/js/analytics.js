@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 function initializePage() {
 	$(".accordion").click(function() {ga("send", "event", "accordion", "clicked")});
-	$(".accordion2").click(function() {ga("send", "event", "accordion", "clicked")});
+	$(".accordion2").click(function() {ga("send", "event", "accordion2", "clicked")});
 
 
 
