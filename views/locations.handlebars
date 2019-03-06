@@ -22,20 +22,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-135672748-1', 'auto');
 ga('send', 'pageview');
-
-// Feature detects Navigation Timing API support.
-if (window.performance) {
-  // Gets the number of milliseconds since page load
-  // (and rounds the result since the value must be an integer).
-  var timeSincePageLoad = Math.round(performance.now());
-
-  // Sends the timing event to Google Analytics.
-  gtag('event', 'timing_complete', {
-    'name': 'load',
-    'value': timeSincePageLoad,
-    'event_category': 'JS Dependencies'
-  });
-}
 </script>
 
 	<title>Event Creation Page</title>
