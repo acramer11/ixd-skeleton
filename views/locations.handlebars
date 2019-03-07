@@ -70,6 +70,7 @@ ga('send', 'pageview');
 }
 
 .icon-bar a {
+  
   float: left;
   width: 20%;
   text-align: center;
@@ -163,11 +164,11 @@ ga('send', 'pageview');
 <body>
 	{{#each events}}
 <div class="event">
- 	<button style="font-size: 40px;"class="accordion2">{{location}}</button>
+<button style="font-size: 40px;"class="accordion2"><p style="text-align: left">{{location}}<span style="float:right">{{date}}</span></p></button>
 	<div style="font-size: 35px;" class="panel">
  		 <p>Emotion: {{emotion}}</p>
  		 <p>Satisfaction: {{satisfaction}}</p>
- 		 <p>Date: {{date}}</p>
+     <p>Activity: {{activity}}</p>
  		 <p>Time: {{time}}</p>
  		 <p>Notes: {{notes}}</p>
 		</div>
@@ -186,18 +187,13 @@ var acc = document.getElementsByClassName("accordion2");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  var item = acc[i];
-  var panel = item.nextElementSibling;
-  panel.style.maxHeight = panel.scrollHeight + "px";
-
-    acc[i].addEventListener("click", function() {
-    this.classList.toggle("inactive");
-    var panel2 = this.nextElementSibling;
-    
-    if (panel2.style.maxHeight){
-      panel2.style.maxHeight = null;
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
     } else {
-      panel2.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
 }

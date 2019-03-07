@@ -184,11 +184,11 @@ if (window.performance) {
 
 {{#each events}}
 <div class="event">
- 	<button style="font-size: 40px;"class="accordion">{{activity}}</button>
+ 	<button style="font-size: 40px;"class="accordion"><p style="text-align: left">{{activity}}<span style="float:right">{{date}}</span></p></button>
 	<div style="font-size: 35px;" class="panel">
  		 <p>Emotion: {{emotion}}</p>
  		 <p>Satisfaction: {{satisfaction}}</p>
- 		 <p>Date: {{date}}</p>
+     <p>Location: {{location}}</p>
  		 <p>Time: {{time}}</p>
  		 <p>Notes: {{notes}}</p>
 		</div>
