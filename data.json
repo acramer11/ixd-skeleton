@@ -6,7 +6,7 @@
 		"satisfaction" : 5,
 		"activity" : "Watching TV",
 		"location" : "Home",
-		"date" : "02/12/2019",
+		"date" : "02/07/2019",
 		"time" : "11:11 AM",
 		"notes" : "optional"
 	},
@@ -15,7 +15,7 @@
 		"satisfaction" : 1,
 		"activity" : "Homework",
 		"location" : "School",
-		"date" : "02/11/2019",
+		"date" : "02/09/2019",
 		"time" : "11:11 AM",
 		"notes" : "Couldn't finish HW on time"
 	},
@@ -24,7 +24,7 @@
 		"satisfaction" : 5,
 		"activity" : "Coding",
 		"location" : "Home",
-		"date" : "02/07/2019",
+		"date" : "02/10/2019",
 		"time" : "11:11 AM",
 		"notes" : ""
 	},
