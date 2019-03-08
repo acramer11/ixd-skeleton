@@ -6,7 +6,7 @@
 		"satisfaction" : 5,
 		"activity" : "Watching TV",
 		"location" : "Home",
-		"date" : "02/12/2918",
+		"date" : "02/12/2019",
 		"time" : "11:11 AM",
 		"notes" : "optional"
 	},
@@ -15,7 +15,7 @@
 		"satisfaction" : 1,
 		"activity" : "Homework",
 		"location" : "School",
-		"date" : "02/12/2918",
+		"date" : "02/11/2019",
 		"time" : "11:11 AM",
 		"notes" : "Couldn't finish HW on time"
 	},
@@ -24,7 +24,7 @@
 		"satisfaction" : 5,
 		"activity" : "Coding",
 		"location" : "Home",
-		"date" : "02/07/2018",
+		"date" : "02/07/2019",
 		"time" : "11:11 AM",
 		"notes" : ""
 	},
@@ -33,7 +33,7 @@
 		"satisfaction" : 1,
 		"activity" : "Studying",
 		"location" : "School",
-		"date" : "02/12/2018",
+		"date" : "02/14/2019",
 		"time" : "11:11 AM",
 		"notes" : "Geisel sucks"
 	},
@@ -42,7 +42,7 @@
 		"satisfaction" : 2,
 		"activity" : "Partying",
 		"location" : "Friend's House",
-		"date" : "02/20/2018",
+		"date" : "02/20/2019",
 		"time" : "11:11 PM",
 		"notes" : "Can't talk to girls"
 		},
@@ -51,7 +51,7 @@
 		"satisfaction" : 4,
 		"activity" : "Surfing",
 		"location" : "Beach",
-		"date" : "02/21/2018",
+		"date" : "02/21/2019",
 		"time" : "09:30 AM",
 		"notes" : "Waves were fun!"
 	}
